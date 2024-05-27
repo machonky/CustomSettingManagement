@@ -1,0 +1,9 @@
+﻿using CustomSettingManagement.EntityFrameworkCore;
+using Xunit;
+
+namespace CustomSettingManagement.EntityFrameworkCore;
+
+public class CustomSettingManagementEntityFrameworkCoreCollectionFixtureBase : ICollectionFixture<CustomSettingManagementEntityFrameworkCoreFixture>
+{
+
+}
