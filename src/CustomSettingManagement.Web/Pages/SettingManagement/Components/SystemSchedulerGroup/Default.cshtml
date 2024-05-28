@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Volo.Abp.Authorization.Permissions
+@using Volo.Abp.SettingManagement
+@using Volo.Abp.SettingManagement.Localization
+@using CustomSettingManagement.Localization
+@using CustomSettingManagement.Permissions;
+@inject IHtmlLocalizer<CustomSettingManagementResource> L
+@inject IPermissionChecker PermissionChecker
+@model CustomSettingManagement.Web.Pages.SettingManagement.Components.SystemSchedulerGroup.SystemSchedulerViewComponent.ViewModel
+
+<abp-script src="/Pages/SettingManagement/Components/SystemSchedulerGroup/Default.cshtml.js" />
+
+<form id="SystemSchedulerSettingsForm" method="post">
+    <abp-row>
+        <abp-column size-md="_12">
+            <div>
+                <abp-input asp-for="SchedulerPollingIntervalMins" type="number" step="1" info=@L["Description:SystemSchedulerSetting.PollingInterval"].Value />
+            </div>
+            <hr class="my-4"/>
+            <div>
+                <abp-button button-type="Primary" type="submit">
+                    <i class="fa fa-save"></i> @L["Save"]
+                </abp-button>
+            </div>
+        </abp-column>
+    </abp-row>
+</form>

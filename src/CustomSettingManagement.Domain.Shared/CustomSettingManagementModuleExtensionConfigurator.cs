@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using JetBrains.Annotations;
+using System.ComponentModel.DataAnnotations;
 using Volo.Abp.Identity;
 using Volo.Abp.ObjectExtending;
 using Volo.Abp.Threading;
@@ -69,5 +70,27 @@ public static class CustomSettingManagementModuleExtensionConfigurator
          * See the documentation for more:
          * https://docs.abp.io/en/abp/latest/Module-Entity-Extensions
          */
+
+        //ObjectExtensionManager.Instance.Modules()
+        //   .ConfigureTenantManagement(tenantConfig =>
+        //   {
+        //       tenantConfig.ConfigureTenant(tenant =>
+        //       {
+        //           tenant.AddOrUpdateProperty<string>("Hostx", p => { });
+        //           //user.AddOrUpdateProperty<string>( //property type: string
+        //           //    "SocialSecurityNumber", //property name
+        //           //    property =>
+        //           //    {
+        //           //        //validation rules
+        //           //        property.Attributes.Add(new RequiredAttribute());
+        //           //        property.Attributes.Add(new StringLengthAttribute(64) { MinimumLength = 4 });
+
+        //           //        property.Configuration[IdentityModuleExtensionConsts.ConfigurationNames.AllowUserToEdit] = true;
+
+        //           //        //...other configurations for this property
+        //           //    }
+        //           //);
+        //       });
+        //   });
     }
 }
