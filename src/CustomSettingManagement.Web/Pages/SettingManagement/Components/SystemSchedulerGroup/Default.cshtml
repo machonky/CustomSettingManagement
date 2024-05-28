@@ -15,6 +15,7 @@
         <abp-column size-md="_12">
             <div>
                 <abp-input asp-for="SchedulerPollingIntervalMins" type="number" step="1" info=@L["Description:SystemSchedulerSetting.PollingInterval"].Value />
+                <abp-input asp-for="BusinessDaysLookahead" type="number" step="1" info=@L["Description:SystemSchedulerSetting.BusinessDaysLookahead"].Value />
             </div>
             <hr class="my-4"/>
             <div>

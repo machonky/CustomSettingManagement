@@ -33,6 +33,11 @@ namespace CustomSettingManagement.Web.Pages.SettingManagement.Components.SystemS
             [Display(Name = "Label:SystemSchedulerSetting.PollingInterval")]
             [Description("Description:SystemSchedulerSetting.PollingInterval")]
             public int SchedulerPollingIntervalMins { get; set; }
+
+            [Range(1, 10)]
+            [Display(Name = "Label:SystemSchedulerSetting.BusinessDaysLookahead")]
+            [Description("Description:SystemSchedulerSetting.BusinessDaysLookahead")]
+            public int BusinessDaysLookahead { get; set; }
         }
     }
 }

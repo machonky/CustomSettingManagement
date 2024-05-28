@@ -12,7 +12,7 @@ public class SystemSchedulerContributor : SettingPageContributorBase
 {
     public SystemSchedulerContributor()
     {
-        RequiredPermissions(SystemSchedulerPermissions.SystemScheduler.EditSchedulerPollingInterval);
+        RequiredPermissions(SystemSchedulerPermissions.SystemScheduler.EditPollingInterval);
     }
 
     public override Task ConfigureAsync(SettingPageCreationContext context)

@@ -10,6 +10,7 @@ public class SystemSchedulerPermissions : CustomSettingManagementPermissions
         public const string HostSideGroup = GroupName + HostGroupPrefix;
         public const string TenantSideGroup = GroupName + TenantGroupPrefix;
 
-        public const string EditSchedulerPollingInterval = GroupName + "." + nameof(EditSchedulerPollingInterval);
+        public const string EditPollingInterval = GroupName + "." + nameof(EditPollingInterval);
+        public const string EditBusinessDaysLookahead = GroupName + "." + nameof(EditBusinessDaysLookahead);
     }
 }

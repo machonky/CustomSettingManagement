@@ -21,7 +21,12 @@
             }
 
             var schedulerPollingIntervalMins = parseInt($("#SchedulerPollingIntervalMins").val(), 10);
-            settingManagement.systemSchedulerSettings.update({ schedulerPollingIntervalMins: schedulerPollingIntervalMins })
+            var businessDaysLookahead = parseInt($("#BusinessDaysLookahead").val(), 10);
+
+            settingManagement.systemSchedulerSettings.update({
+                schedulerPollingIntervalMins: schedulerPollingIntervalMins,
+                businessDaysLookahead: businessDaysLookahead
+            })
                 .then(function (result) {
                     $(document).trigger("AbpSettingSaved");
             });

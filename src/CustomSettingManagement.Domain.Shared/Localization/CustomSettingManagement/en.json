@@ -6,8 +6,11 @@
     "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information, visit abp.io.",
     "Menu:SystemScheduler": "System Scheduler",
     "Permission:CustomSettingManagement.SystemScheduler": "System Scheduler Management",
-    "Permission:CustomSettingManagement.SystemScheduler.EditSchedulerPollingInterval": "Edit scheduler polling interval",
+    "Permission:CustomSettingManagement.SystemScheduler.EditPollingInterval": "Edit scheduler polling interval",
     "Label:SystemSchedulerSetting.PollingInterval": "Scheduler Polling Interval (Mins)",
-    "Description:SystemSchedulerSetting.PollingInterval": "Set the interval"
+    "Description:SystemSchedulerSetting.PollingInterval": "Set the interval",
+    "Permission:CustomSettingManagement.SystemScheduler.EditBusinessDaysLookahead": "Edit future business days",
+    "Label:SystemSchedulerSetting.BusinessDaysLookahead": "Scheduler business day lookahead",
+    "Description:SystemSchedulerSetting.BusinessDaysLookahead": "Set the lookahead value"
   }
 }
