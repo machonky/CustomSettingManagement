@@ -21,23 +21,35 @@ public class SystemSchedulerAppService : CustomSettingManagementAppService, ISys
 
     public async Task<SystemSchedulerSettingsDto> GetAsync() 
     {
+        if (CurrentTenant.GetMultiTenancySide() == MultiTenancySides.Host)
+        {
+            var pollingInterval = await settingManager.GetOrNullGlobalAsync(SystemSchedulerSettingNames.PollingInterval);
+            var result = new SystemSchedulerSettingsDto
+            {
+                SchedulerPollingIntervalMins = Convert.ToInt32(pollingInterval)
+            };
+
+            return result;
+        }
+
         var tenantResult = new SystemSchedulerSettingsDto
         {
-            SchedulerPollingIntervalMins = Convert.ToInt32(await settingManager.GetOrNullGlobalAsync(SystemSchedulerSettingNames.PollingInterval)),
-            BusinessDaysLookahead = Convert.ToInt32(await settingManager.GetOrNullForCurrentTenantAsync(SystemSchedulerSettingNames.BusinessDaysLookahead))
+            SchedulerPollingIntervalMins = Convert.ToInt32(await settingManager.GetOrNullForCurrentTenantAsync(SystemSchedulerSettingNames.PollingInterval))
         };
 
         return tenantResult;
     }
 
-    [Authorize(SystemSchedulerPermissions.SystemScheduler.EditPollingInterval)]
+    [Authorize(SystemSchedulerPermissions.SystemScheduler.EditSchedulerPollingInterval)]
     public async Task UpdateAsync(UpdateSystemSchedulerSettingsDto input)
     {
         if (CurrentTenant.GetMultiTenancySide() == MultiTenancySides.Host)
         {
             await settingManager.SetGlobalAsync(SystemSchedulerSettingNames.PollingInterval, input.SchedulerPollingIntervalMins.ToString());
         }
- 
-        await settingManager.SetForCurrentTenantAsync(SystemSchedulerSettingNames.BusinessDaysLookahead, input.BusinessDaysLookahead.ToString());
+        else
+        {
+            await settingManager.SetForCurrentTenantAsync(SystemSchedulerSettingNames.PollingInterval, input.SchedulerPollingIntervalMins.ToString());
+        }
     }
 }

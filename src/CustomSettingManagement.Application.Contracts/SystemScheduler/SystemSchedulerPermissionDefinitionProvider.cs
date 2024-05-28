@@ -10,7 +10,6 @@ public class SystemSchedulerPermissionDefinitionProvider : CustomSettingManageme
     {
         var hostGroup = context.AddGroup(SystemSchedulerPermissions.SystemScheduler.GroupName, L("Permission:"+ SystemSchedulerPermissions.SystemScheduler.GroupName));
         hostGroup.AddPermission(SystemSchedulerPermissions.SystemScheduler.GroupName, L("Permission:" + SystemSchedulerPermissions.SystemScheduler.GroupName), MultiTenancySides.Both);
-        hostGroup.AddPermission(SystemSchedulerPermissions.SystemScheduler.EditPollingInterval, L("Permission:" + SystemSchedulerPermissions.SystemScheduler.EditPollingInterval), MultiTenancySides.Host);
-        hostGroup.AddPermission(SystemSchedulerPermissions.SystemScheduler.EditBusinessDaysLookahead, L("Permission:" + SystemSchedulerPermissions.SystemScheduler.EditBusinessDaysLookahead), MultiTenancySides.Both);
+        hostGroup.AddPermission(SystemSchedulerPermissions.SystemScheduler.EditSchedulerPollingInterval, L("Permission:" + SystemSchedulerPermissions.SystemScheduler.EditSchedulerPollingInterval), MultiTenancySides.Host);
     }
 }

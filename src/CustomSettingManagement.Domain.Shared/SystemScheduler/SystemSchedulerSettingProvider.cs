@@ -11,12 +11,7 @@ public class SystemSchedulerSettingProvider : CustomSettingManagementSettingDefi
                 SystemSchedulerSettingNames.PollingInterval,
                 "60",
                 L("Label:SystemSchedulerSetting.PollingInterval"),
-                L("Description:SystemSchedulerSetting.PollingInterval")));
-        context.Add(
-            new SettingDefinition(
-                SystemSchedulerSettingNames.BusinessDaysLookahead,
-                "3",
-                L("Label:"+ SystemSchedulerSettingNames.BusinessDaysLookahead),
-                L("Description:" + SystemSchedulerSettingNames.BusinessDaysLookahead)));
+                L("Description:SystemSchedulerSetting.PollingInterval"))
+                .WithProviders(GlobalSettingValueProvider.ProviderName));
     }
 }
