@@ -8,7 +8,7 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.Timing;
 namespace CustomSettingManagement.SystemScheduler;
 
-
+[RemoteService(false)]
 [Authorize(SystemSchedulerPermissions.SystemScheduler.GroupName)]
 public class SystemSchedulerAppService : CustomSettingManagementAppService, ISystemSchedulerAppService
 {
